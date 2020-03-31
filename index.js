@@ -10,7 +10,7 @@ const createUrl = () => {
     privateKeyString: new Buffer(process.env.CF_PRIVATE_KEY, 'base64').toString('utf8'),
     expireTime: new Date().getTime() + 30000
   }
-  const url = 'http://d2rzj0e9o6ddz8.cloudfront.net/oberheim.mp3'
+  const url = `${process.env.CF_DISTRIBUTION_BASE_URL}/oberheim.mp3`
   return cfsign.getSignedUrl(url, options)
 }
 
