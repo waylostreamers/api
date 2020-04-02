@@ -42,6 +42,9 @@ $curl -o- https://gist.githubusercontent.com/ankurk91/8f107ef490f40f74a1cf/raw/i
 then check your node version is 13 
 ```
 $node --version
-```
+````
+<br/>
+That's it ! 
+
 
 
