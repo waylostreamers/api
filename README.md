@@ -32,7 +32,7 @@ Go to http://localhost:3000 in your browser or run `curl http://localhost:3000` 
 
 
 
-Sean's UBUNTU 18.04 instructions for yarn and node installation <br/>
+**Sean's UBUNTU 18.04 instructions for yarn and node installation <br/>**
 from this page (https://gist.github.com/ankurk91/8f107ef490f40f74a1cf) <br/>
 run this command in your terminal  : <br/>
 ```
@@ -42,5 +42,6 @@ $curl -o- https://gist.githubusercontent.com/ankurk91/8f107ef490f40f74a1cf/raw/i
 then check your node version is 13 
 ```
 $node --version
+```
 
 
