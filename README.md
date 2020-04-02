@@ -32,8 +32,15 @@ Go to http://localhost:3000 in your browser or run `curl http://localhost:3000` 
 
 
 
-Sean's UBUNTU instructions for yarn and node installation 
-from this page 
-https://github.com/waylostreamers/api?fbclid=IwAR3gMut9Zc7vNWD59cgJEZxBBe-Y2EE9AAF3ixG_Od8b-y40RMc-_wLfEKU
-run this command : 
+Sean's UBUNTU 18.04 instructions for yarn and node installation <br/>
+from this page (https://gist.github.com/ankurk91/8f107ef490f40f74a1cf) <br/>
+run this command in your terminal  : <br/>
+```
 $curl -o- https://gist.githubusercontent.com/ankurk91/8f107ef490f40f74a1cf/raw/install-node-js.sh | bash
+```
+<br/>
+then check your node version is 13 
+```
+$node --version
+
+
