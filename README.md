@@ -45,7 +45,14 @@ then check your node version is 13
 $node --version
 ```
 <br/>
-That's it ! 
+Install express 
+
+```
+$ npm install express
+
+```
+<br/>
+
 
 
 
