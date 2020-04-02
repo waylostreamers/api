@@ -36,7 +36,7 @@ Go to http://localhost:3000 in your browser or run `curl http://localhost:3000` 
 from this page (https://gist.github.com/ankurk91/8f107ef490f40f74a1cf) <br/>
 run this command in your terminal  : <br/>
 ```
-$curl -o- https://gist.githubusercontent.com/ankurk91/8f107ef490f40f74a1cf/raw/install-node-js.sh | bash
+$curl -o- https://gist.githubusercontent.com/ankurk91/8f107ef490f40f74a1cf/raw/install-node-js.sh | bash -s -- --version 13
 ```
 <br/>
 then check your node version is 13
