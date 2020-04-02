@@ -53,6 +53,15 @@ $ npm install express
 ```
 <br/>
 
+Install aws-cloudront-sign npm mranager : 
+<br/>
+
+```
+$npm i aws-cloudfront-sign
+
+```
+<br/>
+
 
 
 
