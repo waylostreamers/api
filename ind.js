@@ -11,6 +11,7 @@ var signingParams = {
     keypairId: process.env.PUBLIC_KEY,
     privateKeyString: process.env.PRIVATE_KEY,
     // Optional - this can be used as an alternative to privateKeyString
+    // i copied my key into the directory where I ran this .js file from 
     privateKeyPath: './pk-APKAJKY4M3DMS6GO4G7Q.pem',
     expireTime: new Date().getTime() + 30000
 }
