@@ -6,6 +6,7 @@ const app = express()
 const port = 3000
 
 import {cfbu} from './keys.js';
+import {pkpath} from './keys.js';
 
 
 
@@ -13,7 +14,7 @@ var signingParams = {
     keypairId: process.env.PUBLIC_KEY,
     privateKeyString: process.env.PRIVATE_KEY,
     // Optional - this can be used as an alternative to privateKeyString
-    privateKeyPath: './pk-APKAJKY4M3DMS6GO4G7Q.pem',
+    privateKeyPath: pkpath,
     expireTime: new Date().getTime() + 30000
 }
 
