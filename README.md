@@ -14,8 +14,17 @@ Once you have your cloudfront key pair and have been added as a trusted signer t
 ```
 echo "CF_DISTRIBUTION_BASE_URL=http://d2rzj0e9o6ddz8.cloudfront.net" > .env
 echo "CF_ACCESS_KEY_ID=<THE ACCESS KEY ID YOU GOT FROM AWS>" >> .env
+```
+
+You may either use a private key base64 encoded as a string or provide the path to the private key file. To use a base64 encoded string:
+```
 echo "CF_PRIVATE_KEY=$(base64 -i /path/to/private/keyfile.pem)" >> .env
 ```
+To use the keyfile path, instead do:
+```
+echo "CF_PRIVATE_KEY_PATH=/path/to/private/keyfile.pem >> .env"
+```
+Providing `CF_PRIVATE_KEY` will override `CF_PRIVATE_KEY_FILE`, so do not define `CF_PRIVATE_KEY` if you wish to use the keyfile path.
 
 ### Install:
 You need Node 13 installed with yarn or npm. Node 13 is required for ES6 syntax.
