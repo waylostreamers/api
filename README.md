@@ -27,7 +27,7 @@ echo "CF_PRIVATE_KEY_PATH=/path/to/private/keyfile.pem >> .env"
 Providing `CF_PRIVATE_KEY` will override `CF_PRIVATE_KEY_FILE`, so do not define `CF_PRIVATE_KEY` if you wish to use the keyfile path.
 
 ### Install:
-You need Node 13 installed with yarn or npm. Node 13 is required for ES6 syntax.
+You need Node 12 installed with yarn or npm.
 ```
 yarn install
 ```
