@@ -70,6 +70,24 @@ $npm i aws-cloudfront-sign
 
 ```
 <br/>
+The react examples are outdated on the react site. <br>
+npm create react app wont work. <br>
+To create a react app use yarn instead  : <br>
+
+```
+$yarn create react-app my-app
+
+```
+Then run with 
+
+```
+$yarn start
+
+```
+
+
+
+
 
 
 
