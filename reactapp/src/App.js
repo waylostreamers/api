@@ -4,11 +4,15 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import logo from './logo.svg';
 import './App.css';
+
+
 class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            header: "Welcome to WayloStreams..",
+            header: [],
+            trackdata: [],
+            message: "Welcome to WayloStreams..",
             content: "A great website...",
             data:
                 [{"id":"waylo:track:0","title":"Oberheim","artist":"Sean Wayland"},
@@ -16,16 +20,49 @@ class App extends React.Component {
 
         }
 
-       console.log(this.state.data[0]['tracks'])
+       console.log(this.state.trackdata)
+        console.log(this.state.header)
+
+
+
+    }
+
+    componentDidMount() {
+        var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+            targetUrl = 'https://qmlx4jv1uj.execute-api.us-west-2.amazonaws.com/latest/'
+        fetch(proxyUrl + targetUrl)
+            .then((response) => response.json())
+            .then(result => {
+                this.setState({ header: result });
+            });
+
+        var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+            targetUrl = 'https://qmlx4jv1uj.execute-api.us-west-2.amazonaws.com/latest/tracks'
+        fetch(proxyUrl + targetUrl)
+            .then((response) => response.json())
+            .then(result => {
+                this.setState({ trackdata: result});
+            });
     }
 
     render() {
+
+        const songs = this.state.trackdata.tracks
+
+        if(!this.state.trackdata){return <p>loading ....</p>}
+        if(!this.state.header){return <p>loading ....</p>}
+
+
+
         return (
             <div>
                 {/*<Header/>*/}
 
-                <h1>{this.state.header}</h1>
-                <h2>{this.state.content}</h2>
+                <h1>{this.state.header.message}</h1>
+
+                {/*<h2>{this.state.content}</h2>*/}
+
+
 
 
                 <table>
@@ -36,24 +73,19 @@ class App extends React.Component {
                     </tbody>
                 </table>
 
-
-
-
-
                 {/***
-                 render elements from props
-
-                <h3>Array: {this.props.propArray}</h3>
-                <h3>Bool: {this.props.propBool ? "True..." : "False..."}</h3>
-                <h3>Func: {this.props.propFunc(3)}</h3>
-                <h3>Number: {this.props.propNumber}</h3>
-                <h3>String: {this.props.propString}</h3>
-                <h3>Object: {this.props.propObject.objectName1}</h3>
-
-                 */}
+                <table>
+                    <tbody>
+                    WAYLOSTREAMS TRACKS
+                    {songs.map((track, i) => <TableRow key = {i}
+                                                                 data = {track} />)}
+                    </tbody>
+                </table>
+                 ***/}
 
 
-                {/*} <Stuff/> */}
+                <div><pre>{JSON.stringify(songs, null, 2) }</pre></div>
+
 
 
 
@@ -72,26 +104,8 @@ class Content extends React.Component {
         );
     }
 }
-class Header extends React.Component {
-    render() {
-        return (
-            <div>
-
-            </div>
-        );
-    }
-}
-
-class Stuff extends React.Component {
-    render() {
-        return (
-            <div>
 
 
-            </div>
-        );
-    }
-}
 class TableRow extends React.Component {
     render() {
         return (
@@ -105,21 +119,16 @@ class TableRow extends React.Component {
 }
 
 
-App.defaultProps = {
-    headerProp: "Header from props...",
-    contentProp:"Content from props...",
-    propArray: [1, 2, 3, 4, 5],
-    propBool: true,
-    propFunc: function (e) {
-        return e
-    },
-    propNumber: 1,
-    propString: "Lets Do this...",
-
-    propObject: {
-        objectName1: "Bazza",
-        objectName2: "Shazza",
-        objectName3: "Gazza"
+class TableRowApi extends React.Component {
+    render() {
+        return (
+            <tr>
+                <td>id: {this.state.trackdata.id}  </td>
+                <td>artist: {this.state.trackdata.artist}  </td>
+                <td>title: {this.state.trackdata.title}  </td>
+            </tr>
+        );
     }
 }
+
 export default App;
