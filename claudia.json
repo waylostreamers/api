@@ -1,0 +1,10 @@
+{
+  "lambda": {
+    "role": "waylombda-executor",
+    "name": "waylombda",
+    "region": "us-west-2"
+  },
+  "api": {
+    "id": "qmlx4jv1uj"
+  }
+}

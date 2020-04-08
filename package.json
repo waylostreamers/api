@@ -4,9 +4,12 @@
   "main": "index.js",
   "author": "Cam Sexton <cameron.t.sexton@gmail.com>",
   "license": "MIT",
-  "type": "module",
   "dependencies": {
     "aws-cloudfront-sign": "^2.2.0",
+    "aws-serverless-express": "^3.3.8",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "claudia": "^5.12.0"
   }
 }
