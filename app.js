@@ -1,5 +1,6 @@
 const express = require('express')
 const cfsign = require('aws-cloudfront-sign')
+const cors = require('cors')
 
 const app = express()
 
@@ -22,6 +23,12 @@ const metadata = {
       id: 'waylo:track:1',
       title: 'Club Sandwich',
       path: 'club_sandwich.mp3',
+      artist: 'Sean Wayland'
+    },
+    {
+      id: 'waylo:track:2',
+      title: 'Decore2',
+      path: 'decore2.mp3',
       artist: 'Sean Wayland'
     }
   ]
@@ -50,6 +57,8 @@ const getTrack = id => {
     return { error: 'Track not found' }
   }
 }
+
+app.use(cors())
 
 app.get('/tracks', (req, res) => res.send(JSON.stringify({ tracks: metadata.tracks.map(({ id, title, artist }) => ({ id, title, artist })) })))
 
